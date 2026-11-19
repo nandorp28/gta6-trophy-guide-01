@@ -1,5 +1,1 @@
-[
-  { "file": "1-checklist.jpg", "path": "/", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "2-silver.jpg", "path": "/", "grade": "silver", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "3-bronze.jpg", "path": "/", "grade": "bronze", "scroll": 1400, "viewport": { "width": 1280, "height": 800 } }
-]
+[{"file":"1-checklist.jpg","path":"/","view":"Checklist top at scroll 0: progress bar (2 of 55 earned), kind and grade filters, spoiler toggle ON with masked hidden trophies visible","viewport":{"height":800,"width":1280}},{"file":"2-guide.jpg","path":"/","view":"Maximum Withdrawal trophy expanded: guide, steps, and cited sources (PowerPyx, GTABase)","viewport":{"height":800,"width":1280}},{"file":"3-roadmap.jpg","path":"/#roadmap","view":"Roadmap to the platinum (3 steps, about 200 hours) with the cheats warning and the missable-trophies section below","viewport":{"height":800,"width":1280}},{"file":"4-filtered.jpg","path":"/","view":"Checklist filtered to kind=collectibles with spoilers OFF, showing names, descriptions and grades","viewport":{"height":800,"width":1280}}]

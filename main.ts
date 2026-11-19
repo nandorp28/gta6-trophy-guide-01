@@ -9,13 +9,20 @@
 // The output directory itself is never deleted or recreated here — the
 // grader mounts it, so we only create it (recursively) and copy into it.
 
-import { cpSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildDossier } from './vendor/makefun-frontend.ts';
 
 const here = fileURLToPath(new URL('.', import.meta.url));
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
+
+// Fail fast with a clear message instead of handing in a half-built entry.
+const appIndex = join(here, 'app', 'index.html');
+const trophyData = join(here, 'app', 'data', 'trophies.json');
+for (const needed of [appIndex, trophyData]) {
+  if (!existsSync(needed)) throw new Error(`missing required file: ${needed}`);
+}
 
 mkdirSync(outDir, { recursive: true });
 cpSync(join(here, 'app'), join(outDir, 'app'), { recursive: true });
@@ -36,3 +43,26 @@ writeFileSync(
 );
 
 console.log(`Leonida Legends handed in to ${outDir}`);
+
+// A short summary of what was handed in, so a failed or partial run is
+// obvious from the log: entry counts and byte totals for app/ and
+// screenshots/ next to the dossier.
+function summarize(dir) {
+  let files = 0;
+  let bytes = 0;
+  const walk = (d) => {
+    for (const entry of readdirSync(d, { withFileTypes: true })) {
+      const p = join(d, entry.name);
+      if (entry.isDirectory()) walk(p);
+      else if (entry.isFile()) {
+        files += 1;
+        bytes += statSync(p).size;
+      }
+    }
+  };
+  walk(dir);
+  return `${files} files, ${bytes} bytes`;
+}
+console.log(`app/: ${summarize(join(outDir, 'app'))}`);
+console.log(`screenshots/: ${summarize(join(outDir, 'screenshots'))}`);
+console.log(`dossier.json: ${statSync(join(outDir, 'dossier.json')).size} bytes`);
