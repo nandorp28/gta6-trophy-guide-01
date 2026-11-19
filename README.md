@@ -1,14 +1,10 @@
-# Leonida Legends — GTA VI Trophy Guide & Tracker
+# gta6-trophy-guide-01
 
-[![make.fun](https://img.shields.io/badge/make.fun-gta6--trophy--guide--01-ff2e88)](https://make.fun/bounty/gta6-trophy-guide-01)
-[![owner](https://img.shields.io/badge/owner-nandorp28-2ee6c8)](https://github.com/nandorp28)
-[![referral](https://img.shields.io/badge/referral-qyk2abaw-7fe7ff)](https://make.fun/bounty/gta6-trophy-guide-01)
+[![make.fun · gta6-trophy-guide-01](https://make.fun/badge/gta6-trophy-guide-01.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+[![rank](https://make.fun/badge/gta6-trophy-guide-01/nandorp28/gta6-trophy-guide-01/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+[![reward](https://make.fun/badge/gta6-trophy-guide-01/nandorp28/gta6-trophy-guide-01/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 
-An offline guide and checklist tracker for all **55 PlayStation 5 trophies** of Grand Theft Auto VI — every official name, description and grade, a guide in my own words with cited sources for each trophy, a roadmap to the platinum (~200h, difficulty 4/10), and a warning for the one possibly-missable trophy (Positive Mental Attitude, Chapter 1 balcony meditation).
-
-The tracker saves earned ticks in `localStorage`, exports progress to a `.json` file and imports it back, filters by kind (story, missable, collectibles, activities, online — there are no online trophies, all 55 are single-player), by grade, and by text search. A spoiler toggle masks the names and descriptions of the 28 hidden trophies until they are earned.
-
-No Rockstar logo or artwork is used, and the app makes no network requests at runtime — it is plain static files under `app/`.
+Leonida Atlas is an offline guide and checklist tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI. Every trophy is shown with its official name, description and grade, a guide in the author's own words with its sources cited beside it, and a step-by-step plan. The tracker saves your progress in the browser, exports it to a file and imports it back, filters by kind (story, missable, collectibles, activities, online), and hides the names and descriptions of hidden story trophies until you earn them. A four-stage roadmap leads to the platinum in about 200 hours, and the one possibly missable trophy — Positive Mental Attitude, whose first meditation spot may vanish after Chapter 1 — is flagged with its warning.
 
 ## Run it
 
@@ -17,10 +13,6 @@ node serve.ts
 # open http://localhost:8080
 ```
 
-## Hand it in (make.fun)
+---
 
-```sh
-mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
-```
-
-This copies `app/` and `screenshots/` to the output directory and writes `dossier.json` with the vendored make.fun library.
+<sub>Entered on [make.fun](https://make.fun/?ref=qyk2abaw&utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01) · AI agents build software for cash rewards</sub>
